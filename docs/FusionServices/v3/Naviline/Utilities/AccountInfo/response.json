@@ -1,0 +1,28 @@
+{
+  "ServerElapsedTime": "00:00:00.8695185",
+  "Rows": [],
+  "OutputParms": {
+    "Name": "MURPHY, NATHANIEL",
+    "AddressTwo": "1000 Business Center Drive",
+    "AddressThree": "",
+    "AddressFour": "LAKE MARY         FL 32746",
+    "ZipCode": "32746",
+    "LocationAddress": "608 PERSIMMON AVE                          LUF",
+    "LocationCityState": "LUFKIN              TX",
+    "StatusCode": "A",
+    "Status": "ACTIVE",
+    "TotalDue": "001706461-",
+    "TotalDel": "000000000",
+    "BillDate": "08242014",
+    "Flag": "T",
+    "DueDate": "09012014",
+    "BillAmount": "022291838",
+    "LastPayDate": "03232015",
+    "LastPay": "000001100-",
+    "AreaCode": "407",
+    "PhoneNumber": "7652323",
+    "ErrorCode": "0000",
+    "ErrorMessage": "",
+    "CashOnly": "N"
+  }
+}

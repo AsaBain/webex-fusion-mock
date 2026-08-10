@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Static Fusion AccountInfo response for Webex flow testing." />
+    <title>Webex Fusion Mock Endpoint</title>
+    <style>
+      :root { color-scheme: light; --ink:#15231f; --muted:#5f6f69; --paper:#f6f3ec; --card:#fffdf8; --line:#d8ded8; --green:#0b6b4f; --mint:#d8eee5; }
+      * { box-sizing: border-box; }
+      body { margin:0; background:radial-gradient(circle at 12% 4%,rgba(11,107,79,.12),transparent 30rem),var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+      main { min-height:100vh; padding:72px 24px 48px; }
+      .shell { width:min(980px,100%); margin:0 auto; }
+      .hero { margin-bottom:42px; }
+      .eyebrow { margin:0 0 18px; color:var(--green); font-size:12px; font-weight:800; letter-spacing:.18em; text-transform:uppercase; }
+      h1 { max-width:760px; margin:0; font-size:clamp(42px,7vw,76px); line-height:.96; letter-spacing:-.055em; }
+      .intro { max-width:710px; margin:26px 0 20px; color:var(--muted); font-size:18px; line-height:1.65; }
+      .status { display:inline-flex; align-items:center; gap:9px; border:1px solid #b7d7c9; border-radius:999px; background:var(--mint); padding:8px 13px; color:#07513c; font-size:13px; font-weight:700; }
+      .status i { width:8px; height:8px; border-radius:50%; background:#0a9568; box-shadow:0 0 0 4px rgba(10,149,104,.13); }
+      .card { margin-top:18px; border:1px solid var(--line); border-radius:20px; background:rgba(255,253,248,.92); padding:28px; box-shadow:0 18px 55px rgba(28,47,39,.06); }
+      .heading { display:flex; align-items:flex-start; gap:15px; margin-bottom:18px; }
+      .heading>span { display:grid; width:34px; height:34px; place-items:center; border-radius:10px; background:var(--ink); color:white; font:700 12px ui-monospace,monospace; }
+      h2 { margin:1px 0 4px; font-size:20px; letter-spacing:-.02em; }
+      .heading p,.note { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
+      pre { overflow-x:auto; margin:0; border-radius:13px; background:#13251f; padding:18px; color:#e7fff4; font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace; }
+      .note { margin-top:15px; }
+      footer { padding:28px 4px 0; color:#71817a; font-size:12px; }
+      @media(max-width:600px){ main{padding:48px 16px 32px}.card{border-radius:16px;padding:20px}.heading{align-items:center} }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="shell">
+        <header class="hero">
+          <p class="eyebrow">GBPC · Webex test utility</p>
+          <h1>Fusion AccountInfo Mock</h1>
+          <p class="intro">A static GitHub Pages endpoint for testing the Webex Contact Center HTTP Request activity while the Fusion server TLS configuration is being reviewed.</p>
+          <span class="status"><i></i> Ready for GET requests</span>
+        </header>
+        <section class="card">
+          <div class="heading"><span>01</span><div><h2>Request URL</h2><p>Replace the site prefix after GitHub Pages is enabled.</p></div></div>
+          <pre><code>https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/FusionServices/v3/Naviline/Utilities/AccountInfo/response.json?customerNumber=100001&amp;locationNumber=1</code></pre>
+          <p class="note">Customer and location values are accepted as query parameters but ignored. Every request returns the same test record.</p>
+        </section>
+        <section class="card">
+          <div class="heading"><span>02</span><div><h2>Response</h2><p>HTTP 200 · application/json</p></div></div>
+          <pre id="response"><code>Loading sample response…</code></pre>
+        </section>
+        <footer>Test data only · No customer information is collected or stored.</footer>
+      </div>
+    </main>
+    <script>
+      fetch("FusionServices/v3/Naviline/Utilities/AccountInfo/response.json")
+        .then((response) => response.json())
+        .then((data) => { document.querySelector("#response code").textContent = JSON.stringify(data, null, 2); })
+        .catch(() => { document.querySelector("#response code").textContent = "Sample response could not be loaded."; });
+    </script>
+  </body>
+</html>
